@@ -14,11 +14,11 @@ public class arbre {
     {       
         int index = 0;
        
-		while(index < racine.nombreclé && c > racine.clé[index])
+		while(index < racine.nombrecle && c > racine.cle[index])
 		{
 			index++;
 		}
-		if(index <= racine.nombreclé && c == racine.clé[index])
+		if(index <= racine.nombrecle && c == racine.cle[index])
 		{
 			return racine;
 		}
