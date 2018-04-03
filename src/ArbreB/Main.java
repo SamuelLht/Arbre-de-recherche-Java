@@ -20,25 +20,25 @@ public class Main {
 		deux.clé[1]=25;
 		deux.feuille=false;
 		noeud trois = new noeud(2,zero);
-		deux.clé[0]=2;
-		deux.clé[1]=4;
+		trois.clé[0]=2;
+		trois.clé[1]=4;
 		noeud quatre = new noeud(2,zero);
-		deux.clé[0]=6;
-		deux.clé[1]=7;
+		quatre.clé[0]=6;
+		quatre.clé[1]=7;
 		noeud cinq = new noeud(2,zero);
-		deux.clé[0]=9;
+		cinq.clé[0]=9;
 		noeud six = new noeud(2,un);
-		deux.clé[0]=11;
+		six.clé[0]=11;
 		noeud sept = new noeud(2,un);
-		deux.clé[0]=13;
+		sept.clé[0]=13;
 		noeud huit = new noeud(2,un);
-		deux.clé[0]=17;
+		huit.clé[0]=17;
 		noeud neuf = new noeud(2,deux);
-		deux.clé[0]=21;
+		neuf.clé[0]=21;
 		noeud dix = new noeud(2,deux);
-		deux.clé[0]=24;
+		dix.clé[0]=24;
 		noeud onze = new noeud(2,deux);
-		deux.clé[0]=30;
+		onze.clé[0]=30;
 				
 		
 		test.racine.enfant[0]=zero;
@@ -51,11 +51,11 @@ public class Main {
 		un.enfant[1]=sept;
 		un.enfant[2]=huit;
 		deux.enfant[0]=neuf;
-		deux.enfant[0]=dix;
-		deux.enfant[0]=onze;
+		deux.enfant[1]=dix;
+		deux.enfant[2]=onze;
 		
 		System.out.println("Hello");
-		System.out.println(test.recherche(test.racine,13).clé[0]);
+		System.out.println(test.recherche(test.racine,23));
 		
 		
 	}

@@ -18,20 +18,20 @@ public class arbre {
 		}
 
 		else if (racine.clé[0] > c) { // si c est inférieur a la premiere valeur
-			if (racine.enfant[0].clé[0] == -1) { // on tcheck si lenfant est null
+			if (racine.enfant[0] == null || racine.enfant[0].clé[0] == -1) { // on tcheck si lenfant est null
 				return racine;
 			} else {
 				return recherche(racine.enfant[0], c);
 			}
 		} else if (racine.clé[1] < c) { // si c est supérieur à la derniere valeur
-			if (racine.enfant[2].clé[0] == -1) { // on tcheck si lenfant est null
+			if (racine.enfant[2] == null || racine.enfant[2].clé[0] == -1) { // on tcheck si lenfant est null
 				return racine;
 			} else {
 				return recherche(racine.enfant[2], c);
 			}
 
 		} else if (racine.clé[1] > c && racine.clé[0] < c) { // si c est compris entre les deux valeur
-			if (racine.enfant[1].clé[0] == -1) { // on tcheck si lenfant est null
+			if (racine.enfant[1] == null || racine.enfant[1].clé[0] == -1) { // on tcheck si lenfant est null
 				return racine;
 			} else {
 				return recherche(racine.enfant[1], c); // on recursif avec l'enfant du milieu

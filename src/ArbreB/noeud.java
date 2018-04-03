@@ -27,6 +27,10 @@ public class noeud {
 			clé[0] = -1;
 			clé[1] = -1;
 		}
+	    
+	    public String toString() {
+	    	return "["+clé[0]+","+clé[1]+"]";
+	    }
 
 }
 
