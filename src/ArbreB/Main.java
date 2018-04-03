@@ -4,41 +4,41 @@ public class Main {
 
 	public static void main(String[] args) {
 		arbre test = new arbre(2);
-		test.racine.clé[0]=10;
-		test.racine.clé[1]=20;
+		test.racine.cle[0]=10;
+		test.racine.cle[1]=20;
 		test.racine.feuille=false;
 		noeud zero = new noeud(2,test.racine);
-		zero.clé[0]=5;
-		zero.clé[1]=8;
+		zero.cle[0]=5;
+		zero.cle[1]=8;
 		zero.feuille=false;
 		noeud un = new noeud(2,test.racine);
-		un.clé[0]=12;
-		un.clé[1]=15;
+		un.cle[0]=12;
+		un.cle[1]=15;
 		un.feuille=false;
 		noeud deux = new noeud(2,test.racine);
-		deux.clé[0]=22;
-		deux.clé[1]=25;
+		deux.cle[0]=22;
+		deux.cle[1]=25;
 		deux.feuille=false;
 		noeud trois = new noeud(2,zero);
-		trois.clé[0]=2;
-		trois.clé[1]=4;
+		trois.cle[0]=2;
+		trois.cle[1]=4;
 		noeud quatre = new noeud(2,zero);
-		quatre.clé[0]=6;
-		quatre.clé[1]=7;
+		quatre.cle[0]=6;
+		quatre.cle[1]=7;
 		noeud cinq = new noeud(2,zero);
-		cinq.clé[0]=9;
+		cinq.cle[0]=9;
 		noeud six = new noeud(2,un);
-		six.clé[0]=11;
+		six.cle[0]=11;
 		noeud sept = new noeud(2,un);
-		sept.clé[0]=13;
+		sept.cle[0]=13;
 		noeud huit = new noeud(2,un);
-		huit.clé[0]=17;
+		huit.cle[0]=17;
 		noeud neuf = new noeud(2,deux);
-		neuf.clé[0]=21;
+		neuf.cle[0]=21;
 		noeud dix = new noeud(2,deux);
-		dix.clé[0]=24;
+		dix.cle[0]=24;
 		noeud onze = new noeud(2,deux);
-		onze.clé[0]=30;
+		onze.cle[0]=30;
 				
 		
 		test.racine.enfant[0]=zero;
@@ -55,7 +55,7 @@ public class Main {
 		deux.enfant[2]=onze;
 		
 		System.out.println("Hello");
-		System.out.println(test.recherche(test.racine,23));
+		System.out.println(test.recherche(test.racine,14));
 		
 		
 	}
