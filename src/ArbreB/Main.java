@@ -59,8 +59,8 @@ public class Main {
 		test.insertion(testauto.racine, 7);
 		test.insertion(testauto.racine, 6);
 		System.out.println("Hello");
-		System.out.println(test.recherche(testauto.racine,6));
-		
+		//System.out.println(test.recherche(testauto.racine,6));
+		System.out.println(testauto.toString());
 		
 	}
 }

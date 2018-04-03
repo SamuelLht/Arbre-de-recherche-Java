@@ -30,13 +30,13 @@ public class arbre {
 			return racine;
 		}
 
-		else if (racine.cle[0] > c) { // si c est inférieur a la premiere valeur
+		else if (racine.cle[0] > c) { // si c est infï¿½rieur a la premiere valeur
 			if (racine.enfant[0] == null || racine.enfant[0].cle[0] == -1) { // on tcheck si lenfant est null
 				return racine;
 			} else {
 				return recherche(racine.enfant[0], c);
 			}
-		} else if (racine.cle[1] < c) { // si c est supérieur à la derniere valeur
+		} else if (racine.cle[1] < c) { // si c est supï¿½rieur ï¿½ la derniere valeur
 			if (racine.enfant[2] == null || racine.enfant[2].cle[0] == -1) { // on tcheck si lenfant est null
 				return racine;
 			} else {
@@ -49,19 +49,19 @@ public class arbre {
 			} else {
 				return recherche(racine.enfant[1], c); // on recursif avec l'enfant du milieu
 			}
-		} else { // sinon genre c est égale a une valeur du noeud
+		} else { // sinon genre c est ï¿½gale a une valeur du noeud
 			return racine;
 		}
 	}
 
-	public void insertion(noeud racine, int c) {
+	public void insertion(noeud racine, int c){
 		racine = recherche(racine, c); // on recupere le noeud ou il doit etre inserer avec la fonction recherche
 		
 		if (c == racine.cle[0] || c == racine.cle[1]) { // si c est egale a une des deux valeur du noeud
 			return;
 		}
 		
-		if (racine.cle[1] == -1 && c > racine.cle[0]) { // si le noeud contient qu'une valeur et que c est supérieur
+		if (racine.cle[1] == -1 && c > racine.cle[0]) { // si le noeud contient qu'une valeur et que c est supï¿½rieur
 			racine.cle[1] = c;
 		} else if (racine.cle[1] == -1 && c < racine.cle[0]) { // si le noeud contient une valeur et que c est
 																	// inferieur a celle ci
@@ -86,4 +86,30 @@ public class arbre {
 			}
 		}
 	} 
+	
+	public void supression(noeud racine, int c){
+		racine = recherche(racine, c);
+		
+		if (c == racine.cle[0]) { 
+			racine.cle[0]=-1;
+		} else if (c == racine.cle[1]) { 
+			racine.cle[1]=-1;
+		}
+		
+		//Clean de l'arbre 
+		
+	}
+	
+	public String toString()
+	{
+	    String str = String.valueOf(info);
+	    
+	    if (filsG != null)
+	        str = filsG.toString()+", "+str;
+
+	    if (filsD != null)
+	        str = str+", "+filsD.toString();
+	    
+	    return "("+str+")";
+	}
 }
