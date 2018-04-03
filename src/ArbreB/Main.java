@@ -54,8 +54,12 @@ public class Main {
 		deux.enfant[1]=dix;
 		deux.enfant[2]=onze;
 		
+		arbre testauto = new arbre(2,10,20);
+		test.insertion(testauto.racine,5);
+		test.insertion(testauto.racine, 7);
+		test.insertion(testauto.racine, 6);
 		System.out.println("Hello");
-		System.out.println(test.recherche(test.racine,14));
+		System.out.println(test.recherche(testauto.racine,6));
 		
 		
 	}

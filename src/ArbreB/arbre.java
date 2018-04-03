@@ -9,6 +9,19 @@ public class arbre {
 		arbre.ordre = ordre;
 		racine = new noeud(ordre, null);
 	}
+	
+	public arbre(int ordre, int valeur) {
+		arbre.ordre = ordre;
+		racine = new noeud(ordre, null);
+		racine.cle[0]=valeur;
+	}
+	
+	public arbre(int ordre, int valeur1, int valeur2) {
+		arbre.ordre = ordre;
+		racine = new noeud(ordre, null);
+		racine.cle[0]=valeur1;
+		racine.cle[1]=valeur2;
+	}
 
 	public noeud recherche(noeud racine, int c) {
 		if (racine.cle[0] == -1) { // si le noeud est null
@@ -43,28 +56,34 @@ public class arbre {
 
 	public void insertion(noeud racine, int c) {
 		racine = recherche(racine, c); // on recupere le noeud ou il doit etre inserer avec la fonction recherche
-		if (racine.feuille == true) { // si le noeud est une feuille
-			if (racine.cle[1] == -1 && c > racine.cle[0]) { // si le noeud contient qu'une valeur et que c est supérieur
-															// a celle ci
-				racine.cle[1] = c;
-			} else if (racine.cle[1] == -1 && c < racine.cle[0]) { // si le noeud contient une valeur et que c est
+		
+		if (c == racine.cle[0] || c == racine.cle[1]) { // si c est egale a une des deux valeur du noeud
+			return;
+		}
+		
+		if (racine.cle[1] == -1 && c > racine.cle[0]) { // si le noeud contient qu'une valeur et que c est supérieur
+			racine.cle[1] = c;
+		} else if (racine.cle[1] == -1 && c < racine.cle[0]) { // si le noeud contient une valeur et que c est
 																	// inferieur a celle ci
-				racine.cle[1] = racine.cle[0];
-				racine.cle[0] = c;
-			} else {
-				// si le noeud est full, c'est la que la fonction split intervient
-			}
+			racine.cle[1] = racine.cle[0];
+			racine.cle[0] = c;
 		} else {
-			if (racine.cle[1] == -1 && c > racine.cle[0]) {
-				racine.cle[1] = c;
-			} else if (racine.cle[1] == -1 && c < racine.cle[0]) {
-				racine.cle[1] = racine.cle[0];
-				racine.cle[0] = c;
+			if (c < racine.cle[0]) {
+				noeud tmp = new noeud (2,racine);
+				tmp.cle[0] = c;
+				racine.enfant[0] = tmp;
+				racine.feuille = false;
+			} else if (c > racine.cle[1]) {
+				noeud tmp = new noeud (2,racine);
+				tmp.cle[0] = c;
+				racine.enfant[2] = tmp;
+				racine.feuille = false;					
 			} else {
-				// si le noeud est full c'est la que la fonction split intervient
+				noeud tmp = new noeud (2,racine);
+				tmp.cle[0] = c;
+				racine.enfant[1] = tmp;
+				racine.feuille = false;					
 			}
 		}
-
-	}
-
+	} 
 }
